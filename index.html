@@ -3,240 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 福島宮城深度遊 | 行程指南</title>
+    <title>2026 東北冬紀行 | 完整旅行計畫手冊</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
         .en-font { font-family: 'Montserrat', sans-serif; }
         .tab-content { display: none; }
-        .tab-content.active { display: block; animation: slideUp 0.4s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        .btn-active { background: #2563eb !important; color: white !important; font-weight: 700; transform: scale(1.02); }
-        .map-link { color: #2563eb; font-weight: 700; text-decoration: underline; }
-        .location-card { border-left: 4px solid #e2e8f0; padding-left: 1rem; margin-bottom: 1.5rem; }
-        .step-icon { width: 24px; height: 24px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #64748b; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; }
+        .btn-active { background: #2563eb !important; color: white !important; font-weight: 700; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+        .map-link { color: #2563eb; font-weight: 700; text-decoration: underline; transition: opacity 0.2s; }
+        .map-link:hover { opacity: 0.7; }
+        .info-card { border-left: 4px solid #3b82f6; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 pb-20">
+<body class="bg-slate-50 text-slate-900 pb-20">
 
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+    <header class="glass-nav sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-snowflake text-blue-600 text-xl"></i>
-                <h1 class="font-black text-lg">2026 東北冬紀行</h1>
+                <div class="bg-blue-600 p-1.5 rounded-lg shadow-lg">
+                    <i class="fa-solid fa-snowflake text-white"></i>
+                </div>
+                <h1 class="font-black text-lg tracking-tight">Fukushima & Miyagi 2026</h1>
             </div>
-            <button onclick="showDay('tips')" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-black">
-                <i class="fa-solid fa-list-check mr-1"></i> 行前準備
+            <button onclick="showDay('tips')" class="text-xs font-black text-blue-600 bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100">
+                <i class="fa-solid fa-briefcase mr-1"></i> 行前清單
             </button>
         </div>
     </header>
 
-    <nav class="bg-white border-b border-slate-100 sticky top-16 z-40 overflow-x-auto no-scrollbar">
-        <div class="flex px-4 py-3 space-x-2 min-w-max">
-            <button onclick="showDay(1)" id="btn-1" class="day-btn btn-active px-5 py-2 rounded-full text-xs transition-all">D1</button>
-            <button onclick="showDay(2)" id="btn-2" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all">D2</button>
-            <button onclick="showDay(3)" id="btn-3" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all">D3</button>
-            <button onclick="showDay(4)" id="btn-4" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all">D4</button>
-            <button onclick="showDay(5)" id="btn-5" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all">D5</button>
-            <button onclick="showDay(6)" id="btn-6" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all">D6</button>
-            <button onclick="showDay(7)" id="btn-7" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all border border-blue-200">D7</button>
-            <button onclick="showDay(8)" id="btn-8" class="day-btn bg-slate-100 px-5 py-2 rounded-full text-xs transition-all border border-blue-200">D8</button>
-        </div>
-    </nav>
-
-    <main class="max-w-4xl mx-auto px-4 py-6">
+    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        <div id="day-1" class="tab-content active">
-            <h2 class="text-2xl font-black mb-6 flex items-center">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3 text-sm en-font">D1</span> 3/19 東京王子抵達
-            </h2>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-6">
-                <div class="location-card">
-                    <h4 class="font-black text-blue-600">虎航 IT202 (15:39 - 19:35)</h4>
-                    <p class="text-xs text-slate-500 mt-1 italic">抵達：成田機場第二航廈 (NRT T2)</p>
-                </div>
-                <div class="p-4 bg-slate-50 rounded-2xl">
-                    <p class="font-bold text-sm mb-2"><i class="fa-solid fa-train mr-2 text-blue-500"></i>交通路程：約 1.5 小時</p>
-                    <p class="text-xs leading-relaxed text-slate-600">
-                        1. 成田機場 ➔ <b>京成本線特急</b> (往京成上野) ➔ <b>日暮里站</b> (轉乘)<br>
-                        2. 日暮里 ➔ <b>JR 京濱東北線</b> ➔ <b>王子站</b> (北口)
-                    </p>
-                </div>
-                <div class="flex items-center space-x-4 pt-2">
-                    <a href="https://maps.app.goo.gl/yLzNUnrP2aNStiG99" target="_blank" class="map-link text-sm"><i class="fa-solid fa-location-dot mr-1"></i> 東橫INN 王子站北口</a>
-                </div>
+        <aside class="lg:col-span-3">
+            <div class="sticky top-24 space-y-2 bg-white p-3 rounded-3xl shadow-sm border border-slate-100 flex lg:block overflow-x-auto lg:overflow-visible no-scrollbar">
+                <p class="hidden lg:block text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Day</p>
+                <button onclick="showDay(1)" id="btn-1" class="day-btn btn-active flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all">Day 1</button>
+                <button onclick="showDay(2)" id="btn-2" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 2</button>
+                <button onclick="showDay(3)" id="btn-3" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 3</button>
+                <button onclick="showDay(4)" id="btn-4" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 4</button>
+                <button onclick="showDay(5)" id="btn-5" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 5</button>
+                <button onclick="showDay(6)" id="btn-6" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 6</button>
+                <button onclick="showDay(7)" id="btn-7" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 7</button>
+                <button onclick="showDay(8)" id="btn-8" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-500">Day 8</button>
             </div>
-        </div>
+        </aside>
 
-        <div id="day-2" class="tab-content">
-            <h2 class="text-2xl font-black mb-6 flex items-center">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3 text-sm en-font">D2</span> 3/20 往會津若松
-            </h2>
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
-                    <h4 class="font-black text-lg mb-4">午餐首選：國王製麵 (King Seimen)</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                        <b>介紹：</b>王子站必比登名店，招牌是「白だし」拉麵。清甜的湯頭配上Q彈手感麵條，是開啟旅程最棒的味道。
-                    </p>
-                    <a href="https://maps.app.goo.gl/Zq39g2C5v1Z6zRnu9" target="_blank" class="map-link text-sm"><i class="fa-solid fa-location-dot mr-1"></i> 國王製麵 地圖</a>
-                </div>
-                <div class="bg-indigo-600 text-white p-6 rounded-3xl shadow-lg">
-                    <h4 class="font-black mb-2"><i class="fa-solid fa-bus mr-2"></i>跨縣高速巴士 (預約制)</h4>
-                    <p class="text-sm">17:05 <b>王子站前</b> ➔ 22:57 <b>會津若松站</b></p>
-                    <p class="text-[10px] opacity-70 mt-4 leading-relaxed italic">路程提醒：約 5.5 小時，中間會有休息站停靠，可以體驗日本休息站的美食與便利商店。</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="day-3" class="tab-content">
-            <h2 class="text-2xl font-black mb-6 flex items-center">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3 text-sm en-font">D3</span> 3/21 只見線攝影
-            </h2>
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 mb-6">
-                <h4 class="font-black text-lg mb-4 text-slate-700 font-bold underline"><a href="https://maps.app.goo.gl/qD9V3M7K8aW3P3K88" target="_blank">第一只見川橋梁展望台</a></h4>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    <b>路程：</b>從會津若松開車約 45-60 分鐘。需步行爬坡約 10-15 分鐘抵達最高點 D 點。<br>
-                    <b>介紹：</b>世界級的絕景！列車開過鐵橋配上兩側積雪，是日本冬天最具代表性的風景之一。
-                </p>
-            </div>
-            <div class="bg-red-50 p-6 rounded-3xl border border-red-100">
-                <h4 class="font-black text-red-900 mb-2">喜多方拉麵：食堂なまえ</h4>
-                <p class="text-xs text-red-800 leading-relaxed">
-                    <b>介紹：</b>喜多方是日本三大拉麵城。這家店以「極太手打麵」聞名，麵條厚實有勁，搭配清爽的醬油湯頭。
-                </p>
-                <a href="https://maps.app.goo.gl/8UjJ1N6N2aM3P3K88" target="_blank" class="map-link text-sm mt-3 inline-block text-red-700 font-bold underline"><i class="fa-solid fa-location-dot mr-1"></i> 地圖位置</a>
-            </div>
-        </div>
-
-        <div id="day-4" class="tab-content">
-            <h2 class="text-2xl font-black mb-6 flex items-center">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3 text-sm en-font">D4</span> 3/22 大內宿 & 草莓
-            </h2>
-            <div class="bg-amber-50 p-6 rounded-3xl border border-amber-200 mb-6">
-                <h4 class="font-black text-amber-900 text-lg mb-2 underline"><a href="https://maps.app.goo.gl/qL9V3M7K8aW3P3K88" target="_blank">大內宿 (Ouchijuku)</a></h4>
-                <p class="text-xs text-amber-800 leading-relaxed">
-                    <b>介紹：</b>江戶時代的驛站，整條街都是茅草屋頂建築。最著名的傳統就是用「一整根大蔥」當筷子吃蕎麥麵，象徵健康長壽。
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
-                <h4 class="font-black text-lg mb-2 text-pink-600 font-bold underline"><a href="https://maps.app.goo.gl/Z9V3M7K8aW3P3K88" target="_blank">北會津草莓園 (JA Aizu)</a></h4>
-                <p class="text-xs text-slate-600 mb-4 italic">路程：大內宿開車約 30 分鐘即可抵達。</p>
-                <p class="text-xs leading-relaxed text-slate-500">
-                    溫室採草莓，不受天氣影響。30 分鐘吃到飽，請空腹前往！🍓
-                </p>
-            </div>
-        </div>
-
-        <div id="day-7" class="tab-content">
-            <h2 class="text-2xl font-black mb-6 flex items-center">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3 text-sm en-font">D7</span> 3/25 仙台必吃與 Outlet
-            </h2>
-            <div class="space-y-6">
-                <div class="bg-orange-50 p-6 rounded-[2rem] border-2 border-orange-200">
-                    <h4 class="font-black text-orange-900 text-xl mb-2 font-bold underline"><a href="https://maps.app.goo.gl/n9V3M7K8aW3P3K88" target="_blank">米澤牛燒肉 仔虎 (Itora)</a></h4>
-                    <p class="text-xs text-orange-800 leading-relaxed">
-                        <b>介紹：</b>米澤牛是日本三大和牛之一。仔虎燒肉在仙台非常有地位，午餐套餐 CP 值極高，可以吃到頂級肉質而不傷荷包。
-                    </p>
-                </div>
-                <div class="bg-blue-600 text-white p-6 rounded-[2rem] shadow-xl">
-                    <h4 class="font-black text-xl mb-2">三井 Outlet 仙台港</h4>
-                    <p class="text-xs opacity-90 leading-relaxed mb-4">
-                        <b>攻略：</b>東北最大 Outlet。除了逛街，還可以搭乘摩天輪看海港。記得先去服務台領優惠券！
-                    </p>
-                    <a href="https://maps.app.goo.gl/P9V3M7K8aW3P3K88" target="_blank" class="inline-block bg-white text-blue-600 px-4 py-2 rounded-xl text-xs font-black">地圖與交通</a>
-                </div>
-                <div class="p-6 bg-white rounded-3xl border border-slate-200">
-                    <h4 class="font-bold text-sm mb-4">牛舌晚餐候選 (Google Maps)</h4>
-                    <div class="grid grid-cols-2 gap-4">
-                        <a href="https://maps.app.goo.gl/Y9V3M7K8aW3P3K88" target="_blank" class="bg-slate-50 p-3 rounded-xl text-xs font-bold text-slate-700 underline">善治郎 站前本店</a>
-                        <a href="https://maps.app.goo.gl/K9V3M7K8aW3P3K88" target="_blank" class="bg-slate-50 p-3 rounded-xl text-xs font-bold text-slate-700 underline">牛舌 司 (Tsukasa)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="day-tips" class="tab-content">
-            <h2 class="text-3xl font-black mb-8 text-blue-600 flex items-center">
-                <i class="fa-solid fa-clipboard-check mr-4"></i> 全方位行前檢查
-            </h2>
+        <section class="lg:col-span-9">
             
-            <div class="space-y-8">
-                <section>
-                    <h3 class="font-black text-lg mb-4 text-slate-700 border-b pb-2 flex items-center">
-                        <span class="step-icon mr-3">01</span> 重要證件
-                    </h3>
-                    <div class="grid grid-cols-1 gap-3">
-                        <div class="bg-white p-4 rounded-2xl flex justify-between items-center shadow-sm border border-slate-100">
-                            <span class="text-sm font-bold">護照 Passport</span>
-                            <span class="text-[10px] bg-red-50 text-red-500 px-2 py-1 rounded">效期需滿6個月</span>
+            <div id="day-1" class="tab-content active space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-2">3/19 (四) 東京王子抵達</h2>
+                    <p class="text-slate-500 mb-6 font-bold"><i class="fa-solid fa-plane mr-2"></i>虎航 IT202 (15:39 - 19:35)</p>
+                    <div class="info-card bg-blue-50 p-6 rounded-2xl mb-6">
+                        <h4 class="font-black text-blue-700 mb-2">交通路程：成田 ➔ 王子 (約90分)</h4>
+                        <p class="text-sm leading-relaxed">抵達 NRT T2 後，搭乘<b>京成本線特急</b>至日暮里站，轉乘 <b>JR 京濱東北線</b> 抵達王子站。</p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/kXvA2D3VpG9zXnUq7" target="_blank" class="map-link"><i class="fa-solid fa-location-dot mr-2"></i>東橫INN 王子站北口</a>
+                </div>
+            </div>
+
+            <div id="day-2" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">3/20 (五) 往會津若松</h2>
+                    <div class="p-6 bg-orange-50 rounded-2xl mb-6">
+                        <h4 class="font-black text-orange-900 text-lg mb-2 underline"><a href="https://maps.app.goo.gl/H5XW2A9L5pY6J3eU9" target="_blank">國王製麵 (King Seimen)</a></h4>
+                        <p class="text-sm text-orange-800"><b>介紹：</b>王子站必比登拉麵。推薦白湯拉麵，味道清甜高級。11:00 開始營業。</p>
+                    </div>
+                    <div class="bg-indigo-600 text-white p-6 rounded-3xl shadow-lg">
+                        <h4 class="font-black mb-2"><i class="fa-solid fa-bus mr-2"></i>高速巴士行程</h4>
+                        <p class="text-sm mb-1">17:05 王子站前 ➔ 22:57 會津若松站</p>
+                        <p class="text-xs opacity-70">路程約 5.5 小時，中間會停靠休息站可買零食。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-3" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">3/21 (六) 只見線秘境攝影</h2>
+                    <div class="info-card bg-slate-50 p-6 rounded-2xl mb-6">
+                        <h4 class="font-black text-slate-800 text-lg mb-2 underline"><a href="https://maps.app.goo.gl/E4yH8J3D9fK2P1rS6" target="_blank">第一只見川橋梁展望台</a></h4>
+                        <p class="text-xs text-slate-600 leading-relaxed"><b>攻略：</b>從會津若松自駕約 1 小時。停好車後沿步道走 10 分鐘到 D 點拍攝點。這裡是拍攝鐵橋與列車雪景的日本第一聖地。</p>
+                    </div>
+                    <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
+                        <h4 class="font-black text-red-900 text-lg mb-2 underline"><a href="https://maps.app.goo.gl/V3G9X2B1D8P4R7kY5" target="_blank">食堂なまえ (Kitakata Ramen)</a></h4>
+                        <p class="text-sm text-red-800 italic"><b>亮點：</b>喜多方拉麵中的極太麵名店，口感紮實，是東北人的靈魂食物。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-4" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">3/22 (日) 大內宿江戶風情</h2>
+                    <div class="p-6 bg-amber-50 rounded-3xl border border-amber-200 mb-6">
+                        <h4 class="font-black text-amber-900 text-xl mb-2 underline"><a href="https://maps.app.goo.gl/8J7K2D1M9P3S5Y6R7" target="_blank">大內宿 三澤屋</a></h4>
+                        <p class="text-sm text-amber-800"><b>亮點：</b>大蔥蕎麥麵！不給筷子，直接拿蔥撩起麵吃，是非常震撼且有趣的體驗。</p>
+                    </div>
+                    <div class="p-6 border border-pink-100 bg-pink-50 rounded-3xl">
+                        <h4 class="font-black text-pink-700 text-lg mb-2 underline"><a href="https://maps.app.goo.gl/P4R5D2M1K9J3S8B6Y" target="_blank">北會津草莓園 (JA Aizu)</a></h4>
+                        <p class="text-xs text-pink-600 leading-relaxed">溫室採草莓，30 分鐘無限量供應！3 月的草莓正值甜度最高的時期。🍓</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-5" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-4">3/23 (一) 磐梯山星野度假</h2>
+                    <div class="bg-blue-600 text-white p-6 rounded-3xl shadow-xl">
+                        <h4 class="font-bold text-xl mb-4">星野集團 磐梯山溫泉飯店</h4>
+                        <ul class="space-y-4 text-sm opacity-90">
+                            <li><i class="fa-solid fa-snowflake mr-2"></i><b>玩雪體驗：</b>飯店直通雪場，可免費租借雪具。</li>
+                            <li><i class="fa-solid fa-bath mr-2"></i><b>朱紅之湯：</b>體驗正宗會津溫泉。</li>
+                        </ul>
+                        <a href="https://maps.app.goo.gl/V4R5D1M2K9J6B8Y7Z" target="_blank" class="inline-block mt-4 bg-white text-blue-600 px-4 py-2 rounded-xl text-xs font-bold">查看飯店地圖</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-6" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">3/24 (二) 郡山逛街之旅</h2>
+                    <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
+                        <h4 class="font-black text-pink-900 mb-4">郡山伴手禮推薦</h4>
+                        <p class="text-xs leading-relaxed text-pink-700">郡山站 1F 的伴手禮區非常豐富：柏屋薄皮饅頭、三萬石 Mamaador、かんのや (Kannoya)。</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-xl">
+                        <a href="https://maps.app.goo.gl/kXvA2D3VpG9zXnUq7" target="_blank" class="map-link text-sm"><i class="fa-solid fa-location-dot mr-2"></i>宿：東橫INN 郡山站前</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-7" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">3/25 (三) 仙台購物與和牛</h2>
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="p-6 bg-orange-50 rounded-3xl border border-orange-200">
+                            <h4 class="font-black text-orange-900 underline"><a href="https://maps.app.goo.gl/H4V5R2M1K9J8B6Z7Y" target="_blank">米澤牛燒肉 仔虎</a></h4>
+                            <p class="text-xs text-orange-800 mt-2"><b>攻略：</b>仙台最高評價燒肉！中午去吃米澤牛燒肉套餐最划算。</p>
                         </div>
-                        <div class="bg-white p-4 rounded-2xl flex justify-between items-center shadow-sm border border-slate-100">
-                            <span class="text-sm font-bold">駕照正本 + 日文譯本</span>
-                            <span class="text-[10px] bg-blue-50 text-blue-500 px-2 py-1 rounded">租車當天必查</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-2xl flex justify-between items-center shadow-sm border border-slate-100">
-                            <span class="text-sm font-bold">Visit Japan Web QR Code</span>
-                            <span class="text-[10px] bg-green-50 text-green-500 px-2 py-1 rounded">入境快速通關</span>
+                        <div class="p-6 bg-blue-50 rounded-3xl border border-blue-200">
+                            <h4 class="font-black text-blue-900 underline"><a href="https://maps.app.goo.gl/V9R5D2M1K4J3B7Z8Y" target="_blank">三井 Outlet 仙台港</a></h4>
+                            <p class="text-xs text-blue-800 mt-2">持虎航登機證領 500円 券。東北最大，各種精品齊全。</p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <section>
-                    <h3 class="font-black text-lg mb-4 text-slate-700 border-b pb-2 flex items-center">
-                        <span class="step-icon mr-3">02</span> 行李清單 & 穿搭
-                    </h3>
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4">
-                        <div>
-                            <p class="font-black text-blue-600 text-sm mb-2 uppercase">穿著建議</p>
-                            <p class="text-xs text-slate-500 leading-relaxed">
-                                <b>洋蔥式穿法：</b>福島山區與仙台市區溫差大。建議發熱衣 + 針織/刷毛層 + 厚羽絨/防風外套。圍巾、手套與毛帽是雪地攝影的必備救星。
-                            </p>
-                        </div>
-                        <div>
-                            <p class="font-black text-blue-600 text-sm mb-2 uppercase">實用小物</p>
-                            <ul class="text-xs text-slate-500 grid grid-cols-2 gap-2">
-                                <li>🔋 行動電源 (雪地極耗電)</li>
-                                <li>💊 常備藥物 (感冒/腸胃)</li>
-                                <li>🧴 保濕乳液 (日本空氣極乾)</li>
-                                <li>🌂 摺疊傘 (應對雨雪天)</li>
+            <div id="day-8" class="tab-content space-y-6">
+                <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-2xl">
+                    <h2 class="text-3xl font-black mb-8 text-center text-blue-400">3/26 (四) 回程航班</h2>
+                    <div class="flex justify-between items-center pb-8 border-b border-slate-700 mb-8 px-4">
+                        <div class="text-center"><p class="text-3xl font-black">19:00</p><p class="text-[10px] opacity-60">仙台 (SDJ)</p></div>
+                        <div class="text-blue-500"><i class="fa-solid fa-plane text-2xl"></i></div>
+                        <div class="text-center"><p class="text-3xl font-black">21:55</p><p class="text-[10px] opacity-60">桃園 (TPE)</p></div>
+                    </div>
+                    <p class="text-center text-xs opacity-60 font-bold">台灣虎航 IT255</p>
+                </div>
+            </div>
+
+            <div id="day-tips" class="tab-content space-y-6">
+                <div class="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-8 text-blue-600">🧳 完整行前檢查清單</h2>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-6">
+                            <h3 class="font-black text-lg border-b pb-2">重要文件</h3>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle mr-3 text-green-500"></i>護照 (效期需 6 個月以上)</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle mr-3 text-green-500"></i>駕照正本 + 日文譯本 (Day 3 用)</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle mr-3 text-green-500"></i>Visit Japan Web 入境截圖</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle mr-3 text-green-500"></i>虎航實體/數位登機證</li>
                             </ul>
                         </div>
+                        <div class="space-y-6">
+                            <h3 class="font-black text-lg border-b pb-2">穿衣攻略</h3>
+                            <p class="text-xs leading-relaxed text-slate-500 bg-slate-50 p-4 rounded-xl">
+                                <b>洋蔥式穿法：</b>福島山區溫度約 -2°C 到 5°C。室內暖氣非常強（25°C+），建議穿脫方便的厚外套，發熱衣不宜過厚避免悶熱。
+                            </p>
+                        </div>
                     </div>
-                </section>
-
-                <section>
-                    <h3 class="font-black text-lg mb-4 text-slate-700 border-b pb-2 flex items-center">
-                        <span class="step-icon mr-3">03</span> 數位工具
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold">Google Maps (預載離線)</span>
-                        <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold">乘換案內 App</span>
-                        <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold">Google Translate (相機翻譯)</span>
-                    </div>
-                </section>
+                </div>
             </div>
-        </div>
 
+        </section>
     </main>
 
     <script>
         function showDay(id) {
+            // Hide all contents
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Reset all buttons
             document.querySelectorAll('.day-btn').forEach(b => {
                 b.classList.remove('btn-active');
-                b.classList.add('bg-slate-100');
+                b.classList.add('text-slate-500');
             });
             
             if (id === 'tips') {
                 document.getElementById('day-tips').classList.add('active');
             } else {
-                document.getElementById('day-' + id).classList.add('active');
-                const btn = document.getElementById('btn-' + id);
-                if (btn) {
-                    btn.classList.add('btn-active');
-                    btn.classList.remove('bg-slate-100');
+                const targetDay = document.getElementById('day-' + id);
+                const targetBtn = document.getElementById('btn-' + id);
+                if (targetDay) targetDay.classList.add('active');
+                if (targetBtn) {
+                    targetBtn.classList.add('btn-active');
+                    targetBtn.classList.remove('text-slate-500');
                 }
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
