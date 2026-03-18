@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 福島宮城深度遊 | 互動行程手冊</title>
+    <title>2026 福島宮城深度遊 | 連兆亨專屬手冊</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,19 +14,25 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
         .btn-active { background-color: #2563eb !important; color: white !important; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4); font-weight: 700; }
+        .check-item { transition: all 0.2s; }
+        .check-item:hover { background-color: #f8fafc; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 leading-relaxed">
+<body class="bg-slate-50 text-slate-900 leading-relaxed pb-20">
 
     <header class="glass-nav sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <div class="bg-blue-600 p-1.5 rounded-lg shadow-lg">
-                    <i class="fa-solid fa-snowflake text-white"></i>
+                    <i class="fa-solid fa-plane-departure text-white"></i>
                 </div>
                 <h1 class="font-bold text-lg tracking-tight">Fukushima & Miyagi 2026</h1>
             </div>
-            <div class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-full">8 Days Adventure</div>
+            <div class="flex items-center space-x-4">
+                <button onclick="showDay('tips')" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full hover:bg-blue-100 transition-colors">
+                    <i class="fa-solid fa-briefcase mr-1"></i> 行前清單
+                </button>
+            </div>
         </div>
     </header>
 
@@ -34,15 +40,15 @@
         
         <aside class="lg:col-span-3">
             <div class="sticky top-24 space-y-1 bg-white p-3 rounded-2xl shadow-sm border border-slate-100 overflow-x-auto lg:overflow-visible flex lg:block">
-                <p class="hidden lg:block text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Day</p>
-                <button onclick="showDay(1)" id="btn-1" class="day-btn btn-active flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all">Day 1 抵達</button>
-                <button onclick="showDay(2)" id="btn-2" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 2 前進會津</button>
-                <button onclick="showDay(3)" id="btn-3" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 3 只見線</button>
-                <button onclick="showDay(4)" id="btn-4" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 4 大內宿</button>
-                <button onclick="showDay(5)" id="btn-5" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 5 磐梯溫泉</button>
-                <button onclick="showDay(6)" id="btn-6" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 6 郡山甜點</button>
-                <button onclick="showDay(7)" id="btn-7" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 7 仙台購物</button>
-                <button onclick="showDay(8)" id="btn-8" class="day-btn flex-none w-32 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 8 賦歸</button>
+                <p class="hidden lg:block text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Itinerary</p>
+                <button onclick="showDay(1)" id="btn-1" class="day-btn btn-active flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all">Day 1</button>
+                <button onclick="showDay(2)" id="btn-2" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 2</button>
+                <button onclick="showDay(3)" id="btn-3" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 3</button>
+                <button onclick="showDay(4)" id="btn-4" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 4</button>
+                <button onclick="showDay(5)" id="btn-5" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 5</button>
+                <button onclick="showDay(6)" id="btn-6" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 6</button>
+                <button onclick="showDay(7)" id="btn-7" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 7</button>
+                <button onclick="showDay(8)" id="btn-8" class="day-btn flex-none w-28 lg:w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600">Day 8</button>
             </div>
         </aside>
 
@@ -50,24 +56,22 @@
             
             <div id="day-1" class="tab-content active space-y-6">
                 <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
-                    <h2 class="text-3xl font-black mb-1">3/19 (四) 成田抵達</h2>
-                    <p class="text-slate-500 mb-6">虎航 IT202 (15:39 - 19:35)</p>
-                    
+                    <h2 class="text-3xl font-black mb-1">3/19 (四) 抵達東京王子</h2>
+                    <p class="text-slate-500 mb-6"><i class="fa-solid fa-plane mr-2"></i>虎航 IT202 (15:39 - 19:35)</p>
                     <div class="space-y-4">
                         <div class="p-4 bg-blue-50 rounded-2xl border-l-4 border-blue-500">
-                            <h4 class="font-bold">20:13 - 21:24 交通轉乘</h4>
-                            <p class="text-sm">空港第２ビル ➔ 京成本線特急 ➔ 日暮里 (21:24) ➔ 京濱東北線 ➔ 王子 (21:39)</p>
+                            <h4 class="font-bold">20:13 - 21:39 交通轉乘</h4>
+                            <p class="text-sm">空港第２ビル ➔ 京成本線特急 ➔ 日暮里 (21:24) ➔ 王子 (21:39)</p>
                         </div>
                         <div class="p-4 bg-orange-50 rounded-2xl">
-                            <h4 class="font-bold">深夜美食 (推薦)</h4>
-                            <ul class="text-sm space-y-1 mt-2">
-                                <li>餃子的王將 (至 22:30)</li>
+                            <h4 class="font-bold">深夜美食推薦</h4>
+                            <ul class="text-sm space-y-2 mt-2">
+                                <li><a href="https://goo.gl/maps/example1" target="_blank" class="text-blue-600 underline">餃子的王將</a> (至 22:30)</li>
                                 <li>濃厚つけ麺ラーメン八重桜 (至 23:00)</li>
-                                <li>うどん屋清 (至 23:00)</li>
                             </ul>
                         </div>
                         <div class="p-4 border border-slate-200 rounded-2xl">
-                            <p class="font-bold">宿：東橫INN 王子站北口</p>
+                            <h4 class="font-bold text-slate-700">宿：<a href="https://www.toyoko-inn.com/search/detail/00174/" target="_blank" class="text-blue-600 underline">東橫INN 王子站北口</a></h4>
                         </div>
                     </div>
                 </div>
@@ -75,21 +79,21 @@
 
             <div id="day-2" class="tab-content space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
-                    <h2 class="text-3xl font-black mb-6">3/20 (五) 王子美食 ➔ 會津</h2>
+                    <h2 class="text-3xl font-black mb-6">3/20 (五) 王子散策 ➔ 前進會津</h2>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div class="p-5 bg-orange-50 rounded-2xl">
-                            <h4 class="font-bold">午餐：國王製麵</h4>
-                            <p class="text-xs mt-2">11:00-15:00 / 17:30-20:30 (必比登推薦)</p>
+                            <h4 class="font-bold">午餐：<a href="https://goo.gl/maps/example2" target="_blank" class="text-blue-600 underline">國王製麵</a></h4>
+                            <p class="text-xs mt-2">11:00-15:00 (米其林必比登)</p>
                         </div>
-                        <div class="p-5 bg-green-50 rounded-2xl">
-                            <h4 class="font-bold">明治堂 (7:00-19:00)</h4>
-                            <p class="text-xs mt-2">百年麵包店：炸咖哩麵包</p>
+                        <div class="p-5 bg-amber-50 rounded-2xl">
+                            <h4 class="font-bold">百年麵包：明治堂</h4>
+                            <p class="text-xs mt-2">必買炸咖哩麵包 (7:00-19:00)</p>
                         </div>
                     </div>
-                    <div class="p-6 bg-indigo-600 text-white rounded-2xl mt-6 shadow-lg">
-                        <h4 class="font-bold text-lg mb-2">🚌 高速巴士 (需預約)</h4>
+                    <div class="p-6 bg-indigo-600 text-white rounded-3xl mt-6 shadow-lg">
+                        <h4 class="font-bold text-lg mb-2"><i class="fa-solid fa-bus mr-2 text-indigo-300"></i>高速巴士轉運</h4>
                         <p class="text-sm">17:05 王子站 ➔ 22:57 抵達會津若松</p>
-                        <p class="text-xs opacity-80 mt-2">宿：mooi宮町 (連住三晚)</p>
+                        <p class="text-xs opacity-80 mt-2">宿：mooi宮町 (會津若松連住三晚)</p>
                     </div>
                 </div>
             </div>
@@ -98,17 +102,23 @@
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
                     <h2 class="text-3xl font-black mb-6">3/21 (六) 只見線 ➔ 喜多方</h2>
                     <div class="space-y-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl">
-                            <h4 class="font-bold">只見線攝影行程 (租車 3/21-22)</h4>
-                            <p class="text-sm">自駕前往第一鐵橋、大志集落等景點</p>
+                        <div class="p-5 bg-slate-900 text-white rounded-2xl">
+                            <h4 class="font-bold"><i class="fa-solid fa-car mr-2"></i>租車自駕 (3/21-3/22)</h4>
+                            <p class="text-sm opacity-80">前往只見線第一鐵橋、大志集落攝影</p>
                         </div>
-                        <div class="p-4 bg-red-50 rounded-2xl">
-                            <h4 class="font-bold text-red-900">喜多方拉麵巡禮 (10:00-15:30)</h4>
-                            <p class="text-sm text-red-700">名店：食堂なまえ / 坂內食堂本店</p>
+                        <div class="p-5 bg-red-50 rounded-2xl border border-red-100">
+                            <h4 class="font-bold text-red-900 underline"><a href="https://goo.gl/maps/example3" target="_blank">喜多方拉麵：食堂なまえ</a></h4>
+                            <p class="text-sm text-red-700 mt-1">10:00-15:30 (極太手揉麵必吃)</p>
                         </div>
-                        <div class="p-4 border border-slate-100 rounded-2xl">
-                            <h4 class="font-bold">七日町/會津若松散策</h4>
-                            <p class="text-sm leading-relaxed">末廣酒造 (至 16:30) / 本家長門屋 / 會津品牌館</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-white border border-slate-200 rounded-xl">
+                                <h4 class="font-bold text-sm">末廣酒造</h4>
+                                <p class="text-xs text-slate-500 mt-1">嘉永藏參觀 (至 16:30)</p>
+                            </div>
+                            <div class="p-4 bg-white border border-slate-200 rounded-xl">
+                                <h4 class="font-bold text-sm">會津品牌館</h4>
+                                <p class="text-xs text-slate-500 mt-1">選購在地工藝品與伴手禮</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,22 +128,18 @@
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
                     <h2 class="text-3xl font-black mb-6">3/22 (日) 大內宿 ➔ 草莓採集</h2>
                     <div class="space-y-6">
-                        <div class="p-5 bg-amber-50 rounded-2xl border border-amber-200 flex justify-between items-center">
+                        <div class="p-6 bg-amber-50 rounded-3xl border border-amber-200 flex justify-between items-center">
                             <div>
-                                <h4 class="font-bold text-amber-900 text-lg underline">大內宿三澤屋 (已預約)</h4>
-                                <p class="text-sm text-amber-800">必吃：大蔥蕎麥麵 (9:30-16:00)</p>
+                                <h4 class="font-black text-amber-900 text-xl"><a href="https://goo.gl/maps/example4" target="_blank" class="hover:underline text-blue-700">大內宿 三澤屋 (已預約)</a></h4>
+                                <p class="text-sm text-amber-800 mt-1">必點：大蔥蕎麥麵 🥢 (09:30-16:00)</p>
                             </div>
-                            <i class="fa-solid fa-utensils text-amber-200 text-3xl"></i>
+                            <i class="fa-solid fa-utensils text-amber-200 text-4xl"></i>
                         </div>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="p-5 bg-white border border-slate-200 rounded-2xl">
-                                <h4 class="font-bold">伊佐須美神社</h4>
-                                <p class="text-xs text-slate-500 mt-1">參拜岩代國一之宮</p>
-                            </div>
-                            <div class="p-5 bg-red-50 border border-red-100 rounded-2xl">
-                                <h4 class="font-bold text-red-900">北會津草莓園 (11:00-16:00)</h4>
-                                <p class="text-xs text-red-700 mt-1">30分鐘吃到飽 (出示折扣券減100円)</p>
-                            </div>
+                        <div class="p-5 bg-red-50 border border-red-100 rounded-3xl relative overflow-hidden">
+                            <h4 class="font-bold text-red-900">北會津草莓園 (11:00-16:00)</h4>
+                            <p class="text-sm text-red-700 mt-1">30分鐘吃到飽！</p>
+                            <a href="https://www.aizu-ichigo.com/index.html" target="_blank" class="inline-block mt-3 text-xs bg-red-500 text-white px-3 py-1.5 rounded-full font-bold">查看折價券 🎫</a>
+                            <i class="fa-solid fa-seedling absolute -right-4 -bottom-4 text-7xl opacity-10"></i>
                         </div>
                     </div>
                 </div>
@@ -142,21 +148,22 @@
             <div id="day-5" class="tab-content space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
                     <h2 class="text-3xl font-black mb-4">3/23 (一) 星野集團 磐梯山溫泉</h2>
-                    <div class="p-4 bg-slate-100 rounded-2xl mb-6">
-                        <p class="text-sm">🚌 接駁車：會津若松 (8:00) ➔ 磐梯山溫泉飯店 (8:43)</p>
+                    <div class="p-4 bg-blue-50 rounded-2xl mb-6 text-blue-800 font-bold text-sm">
+                        <i class="fa-solid fa-bus-simple mr-2"></i>接駁車：會津若松站 (08:00) ➔ 飯店 (08:43)
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl">
                             <h4 class="font-bold text-xl mb-4 text-blue-400">飯店限定活動</h4>
-                            <ul class="space-y-3 text-sm opacity-90">
-                                <li><i class="fa-solid fa-snowflake mr-2"></i>雪場玩雪廣場 (免費租衣)</li>
-                                <li><i class="fa-solid fa-bullseye mr-2"></i>紅牛雪人 / 打雪戰</li>
-                                <li><i class="fa-solid fa-music mr-2"></i>21:00 大廳祭典舞蹈</li>
+                            <ul class="space-y-4 text-sm opacity-90">
+                                <li><i class="fa-solid fa-person-skiing mr-2 text-blue-400"></i>雪場玩雪 (免費租借雪衣)</li>
+                                <li><i class="fa-solid fa-masks-theater mr-2 text-blue-400"></i>21:00 藥研舞祭典</li>
+                                <li><i class="fa-solid fa-spa mr-2 text-blue-400"></i>朱色之湯 (必泡溫泉)</li>
                             </ul>
                         </div>
-                        <div class="p-5 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col justify-center">
-                            <h4 class="font-bold text-center">住宿：磐梯山溫泉酒店</h4>
-                            <p class="text-center text-xs text-slate-400 mt-2">(4pm Check-in / 2pm Check-out)</p>
+                        <div class="p-6 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col justify-center items-center text-center">
+                            <h4 class="font-black text-lg">住宿：磐梯山溫泉酒店</h4>
+                            <p class="text-xs text-slate-400 mt-2">2PM Check-out / 4PM Check-in</p>
+                            <a href="https://hoshinoresorts.com/zh_tw/hotels/bandai/" target="_blank" class="mt-4 text-blue-600 underline text-sm font-bold">官網活動表</a>
                         </div>
                     </div>
                 </div>
@@ -164,21 +171,25 @@
 
             <div id="day-6" class="tab-content space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
-                    <h2 class="text-3xl font-black mb-6">3/24 (二) 郡山甜點三劍客</h2>
-                    <div class="p-4 bg-blue-50 rounded-2xl mb-6">
-                        <p class="text-sm font-bold text-blue-800">🚌 17:20 飯店 ➔ 18:35 抵達郡山駅 (已預約)</p>
+                    <h2 class="text-3xl font-black mb-6">3/24 (二) 郡山甜點巡禮</h2>
+                    <div class="p-4 bg-indigo-50 rounded-2xl mb-6 text-indigo-800 text-sm font-bold">
+                        <i class="fa-solid fa-bus mr-2"></i>飯店接駁：17:20 ➔ 郡山站 (18:35)
                     </div>
                     <div class="grid gap-4">
-                        <div class="p-5 bg-pink-50 rounded-2xl">
-                            <h4 class="font-bold text-pink-900">必買甜點 (車站 1F 9:00-20:00)</h4>
-                            <p class="text-sm text-pink-700">柏屋 (薄皮饅頭) / 三萬石 (Mamaador) / かんのや</p>
+                        <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
+                            <h4 class="font-black text-pink-900 mb-3">郡山駅 1F 甜點必買 (至 20:00)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">柏屋薄皮饅頭</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">三萬石 Mamaador</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">かんのや</span>
+                            </div>
                         </div>
                         <div class="p-5 bg-white border border-slate-200 rounded-2xl">
-                            <h4 class="font-bold">美食推薦：凜々亭 (拌麵)</h4>
-                            <p class="text-sm text-slate-500">牛丼拌麵 (11-14 / 17-22)</p>
+                            <h4 class="font-bold underline text-blue-700"><a href="https://goo.gl/maps/example5" target="_blank">晚餐：凜々亭 (牛丼拌麵)</a></h4>
+                            <p class="text-xs text-slate-500 mt-2">17:00-22:00 (週日公休)</p>
                         </div>
-                        <div class="p-4 bg-slate-50 rounded-xl">
-                            <p class="font-bold text-sm">宿：東橫INN 郡山</p>
+                        <div class="p-4 border border-slate-200 rounded-xl">
+                            <h4 class="font-bold text-sm">宿：東橫INN 郡山</h4>
                         </div>
                     </div>
                 </div>
@@ -186,34 +197,120 @@
 
             <div id="day-7" class="tab-content space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
-                    <h2 class="text-3xl font-black mb-6">3/25 (三) 仙台 Outlet 瘋狂採買</h2>
-                    <div class="bg-indigo-50 p-4 rounded-2xl mb-6 border-l-4 border-indigo-500">
-                        <h4 class="font-bold text-indigo-900">🚄 新幹線：郡山 (8:57) ➔ 仙台 (9:38)</h4>
+                    <h2 class="text-3xl font-black mb-6">3/25 (三) 仙台 Outlet 採買</h2>
+                    <div class="bg-indigo-600 p-5 rounded-2xl mb-6 text-white shadow-lg">
+                        <h4 class="font-bold"><i class="fa-solid fa-train mr-2 text-indigo-200"></i>新幹線移動 (08:57 - 09:38)</h4>
+                        <p class="text-xs mt-1 opacity-80">郡山 ➔ やまびこ125号 ➔ 仙台</p>
                     </div>
+                    
                     <div class="space-y-6">
                         <div class="p-6 bg-white border-2 border-blue-600 rounded-3xl shadow-sm">
                             <div class="flex justify-between items-start mb-4">
-                                <h4 class="font-black text-xl text-blue-600">三井 Outlet 仙台港</h4>
-                                <span class="bg-red-500 text-white px-2 py-1 rounded text-[10px] font-bold">優惠提醒</span>
+                                <h4 class="font-black text-xl text-blue-600 underline"><a href="https://goo.gl/maps/Vf7wvSyNvbFHLahK8" target="_blank">三井 Outlet 仙台港</a></h4>
+                                <span class="bg-red-500 text-white px-2 py-1 rounded text-[10px] font-bold">優惠重點</span>
                             </div>
-                            <p class="text-sm mb-4 leading-relaxed">持<b>虎航登機證</b>或指定信用卡 (Cube/中信/樂天) 可領取 500円 折價券！</p>
-                            <div class="text-xs bg-slate-50 p-3 rounded-xl text-slate-500 italic">"JR 中野榮站下車即達"</div>
+                            <p class="text-sm mb-4 leading-relaxed">持<b>虎航登機證</b>至服務台兌換 500円 折價券！</p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://static.tigerairtw.com/files/%E4%B8%89%E4%BA%95OR%20code_jp.png" target="_blank" class="bg-slate-100 text-slate-700 px-4 py-2 rounded-xl text-xs font-bold hover:bg-slate-200">
+                                    <i class="fa-solid fa-qrcode mr-2"></i>優惠 QR Code
+                                </a>
+                            </div>
                         </div>
-                        <div class="p-4 bg-orange-50 rounded-2xl">
-                            <p class="font-bold text-orange-900">晚餐推薦：米澤牛燒肉 仔虎 (仙台駅前店)</p>
+                        <div class="p-5 bg-orange-50 rounded-2xl">
+                            <h4 class="font-bold text-orange-900">晚餐推薦：米澤牛燒肉 仔虎</h4>
+                            <p class="text-xs text-orange-700 mt-1">仙台駅前店 / 站內 3F 牛舌小徑</p>
+                        </div>
+                        <div class="p-4 border border-slate-200 rounded-xl">
+                            <h4 class="font-bold text-sm">宿：東橫INN 仙台西口廣瀨通</h4>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="day-8" class="tab-content space-y-6">
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 text-center py-16">
-                    <i class="fa-solid fa-plane-up text-6xl text-slate-200 mb-6"></i>
-                    <h2 class="text-3xl font-black mb-2">3/26 (四) 期待下次再見</h2>
-                    <p class="text-slate-500">最後採購與前往仙台機場</p>
-                    <div class="max-w-xs mx-auto mt-8 p-4 bg-slate-900 text-white rounded-2xl shadow-lg">
-                        <p class="font-bold">仙台 ➔ 台北</p>
-                        <p class="text-xs opacity-70 mt-1">回家整理滿滿的回憶！</p>
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 text-center">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest">Final Day 賦歸</div>
+                    <h2 class="text-3xl font-black mb-8">3/26 (四) 仙台 ➔ 台北</h2>
+                    
+                    <div class="space-y-6 text-left">
+                        <div class="p-6 bg-slate-900 text-white rounded-3xl shadow-2xl relative overflow-hidden">
+                            <h4 class="text-blue-400 font-black text-lg mb-4 underline"><i class="fa-solid fa-plane-up mr-2"></i>回程航班資訊</h4>
+                            <div class="flex justify-between items-center border-b border-slate-700 pb-6 mb-6">
+                                <div class="text-center">
+                                    <p class="text-2xl font-black">19:00</p>
+                                    <p class="text-[10px] opacity-60">仙台 (SDJ)</p>
+                                </div>
+                                <div class="px-4 text-slate-600"><i class="fa-solid fa-plane text-xl"></i></div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-black">21:55</p>
+                                    <p class="text-[10px] opacity-60">桃園 (TPE)</p>
+                                </div>
+                            </div>
+                            <p class="text-sm font-bold opacity-80">台灣虎航 IT255</p>
+                            <i class="fa-solid fa-passport absolute -right-6 -bottom-6 text-9xl opacity-10 -rotate-12"></i>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="p-5 bg-white border border-slate-200 rounded-2xl">
+                                <h4 class="font-bold mb-2">上午：仙台朝市</h4>
+                                <p class="text-xs text-slate-500">體驗當地活力與海鮮小吃</p>
+                            </div>
+                            <div class="p-5 bg-white border border-slate-200 rounded-2xl">
+                                <h4 class="font-bold mb-2">下午：S-PAL 仙台</h4>
+                                <p class="text-xs text-slate-500">最後採買毛豆奶昔、厚牛舌便當</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-tips" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6 text-blue-600">🧳 貼心準備清單</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="font-black text-lg border-b-2 border-blue-100 pb-2">必帶文件 & 物品</h3>
+                            <ul class="space-y-3">
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-regular fa-square-check mr-3 text-blue-500"></i>
+                                    <span class="text-sm"><b>護照 & 簽證</b> (確認效期 6 個月以上)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-regular fa-square-check mr-3 text-blue-500"></i>
+                                    <span class="text-sm"><b>Visit Japan Web</b> (截圖 QR Code)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-regular fa-square-check mr-3 text-blue-500"></i>
+                                    <span class="text-sm"><b>駕照正本 + 日文譯本</b> (Day 3 租車必備)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-regular fa-square-check mr-3 text-blue-500"></i>
+                                    <span class="text-sm"><b>實體西瓜卡 / iPhone Apple Pay</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-black text-lg border-b-2 border-blue-100 pb-2">穿搭 & 其他</h3>
+                            <ul class="space-y-3">
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-solid fa-temperature-low mr-3 text-blue-300"></i>
+                                    <span class="text-sm"><b>洋蔥式穿法</b> (福島 3 月仍有雪，早晚溫差大)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-solid fa-plug mr-3 text-blue-300"></i>
+                                    <span class="text-sm"><b>行動電源</b> (拍照拍雪很耗電)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-solid fa-umbrella mr-3 text-blue-300"></i>
+                                    <span class="text-sm"><b>摺疊傘 / 輕便雨衣</b> (雪地散步好用)</span>
+                                </li>
+                                <li class="check-item p-3 border border-slate-100 rounded-xl flex items-center">
+                                    <i class="fa-solid fa-suitcase-rolling mr-3 text-blue-300"></i>
+                                    <span class="text-sm"><b>備用大購物袋</b> (Outlet 戰利品專用)</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,21 +318,28 @@
         </section>
     </main>
 
-    <footer class="max-w-6xl mx-auto px-4 py-10 text-center text-slate-400 text-xs">
-        <p>© 2026 Fukushima Miyagi Adventure Map</p>
+    <footer class="max-w-6xl mx-auto px-4 py-10 text-center text-slate-400 text-[10px] font-medium tracking-widest uppercase">
+        <p>© 2026 LIEN CHAO-HENG | Fukushima Miyagi Adventure</p>
     </footer>
 
     <script>
-        function showDay(dayNumber) {
+        function showDay(id) {
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            document.getElementById('day-' + dayNumber).classList.add('active');
-            document.querySelectorAll('.day-btn').forEach(btn => {
-                btn.classList.remove('btn-active');
-                btn.classList.add('text-slate-600');
-            });
-            const activeBtn = document.getElementById('btn-' + dayNumber);
-            activeBtn.classList.add('btn-active');
-            activeBtn.classList.remove('text-slate-600');
+            if (id === 'tips') {
+                document.getElementById('day-tips').classList.add('active');
+                document.querySelectorAll('.day-btn').forEach(btn => btn.classList.remove('btn-active'));
+            } else {
+                document.getElementById('day-' + id).classList.add('active');
+                document.querySelectorAll('.day-btn').forEach(btn => {
+                    btn.classList.remove('btn-active');
+                    btn.classList.add('text-slate-600');
+                });
+                const activeBtn = document.getElementById('btn-' + id);
+                if (activeBtn) {
+                    activeBtn.classList.add('btn-active');
+                    activeBtn.classList.remove('text-slate-600');
+                }
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
