@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 福島宮城冬末之旅 | 互動行程手冊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
+        .btn-active { background-color: #2563eb !important; color: white !important; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4); font-weight: 700; }
+        .spot-card { transition: transform 0.2s; }
+        .spot-card:hover { transform: scale(1.01); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 leading-relaxed">
+
+    <header class="glass-nav sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="bg-blue-600 p-1.5 rounded-lg shadow-lg">
+                    <i class="fa-solid fa-snowflake text-white"></i>
+                </div>
+                <h1 class="font-bold text-lg tracking-tight">Fukushima & Miyagi 2026</h1>
+            </div>
+            <div class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-full">
+                Lien's Travel Plan
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <aside class="lg:col-span-3">
+            <div class="sticky top-24 space-y-1 bg-white p-3 rounded-2xl shadow-sm border border-slate-100">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Day</p>
+                <button onclick="showDay(1)" id="btn-1" class="day-btn btn-active w-full text-left px-4 py-3 rounded-xl transition-all">Day 1 入境東京</button>
+                <button onclick="showDay(2)" id="btn-2" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 2 前往會津</button>
+                <button onclick="showDay(3)" id="btn-3" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 3 鐵道與清酒</button>
+                <button onclick="showDay(4)" id="btn-4" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 4 大內宿體驗</button>
+                <button onclick="showDay(5)" id="btn-5" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 5 磐梯溫泉</button>
+                <button onclick="showDay(6)" id="btn-6" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 6 郡山甜點</button>
+                <button onclick="showDay(7)" id="btn-7" class="day-btn w-full text-left px-4 py-3 rounded-xl transition-all text-slate-600 hover:bg-slate-50">Day 7 仙台購物</button>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-9 space-y-8">
+            
+            <div id="day-1" class="tab-content active space-y-6">
+                <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-blue-600 font-bold text-sm">3/19 (THU)</span>
+                            <h2 class="text-3xl font-black mt-1">成田抵達</h2>
+                        </div>
+                        <i class="fa-solid fa-plane-arrival text-slate-200 text-4xl"></i>
+                    </div>
+                    
+                    <div class="grid gap-4">
+                        <div class="p-5 rounded-2xl bg-blue-50 border border-blue-100 flex gap-4">
+                            <div class="text-blue-600"><i class="fa-solid fa-ticket text-xl"></i></div>
+                            <div>
+                                <p class="font-bold text-blue-900">台灣虎航 IT202</p>
+                                <p class="text-sm text-blue-700">15:55 (TPE) ➔ 19:35 (NRT) 第二航廈</p>
+                            </div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 flex gap-4 spot-card">
+                            <div class="text-slate-400"><i class="fa-solid fa-hotel text-xl"></i></div>
+                            <div>
+                                <p class="font-bold">東橫INN 王子站北口</p>
+                                <p class="text-sm text-slate-500">京成本線(日暮里) ➔ 京濱東北線(王子站)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-2" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">王子美食 ➔ 會津</h2>
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="p-5 rounded-2xl bg-orange-50 border border-orange-100">
+                            <h4 class="font-bold text-orange-900 leading-none">午餐：國王製麵</h4>
+                            <p class="text-xs text-orange-700 mt-2">米其林推薦，必點雲吞拉麵</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-green-50 border border-green-100">
+                            <h4 class="font-bold text-green-900 leading-none">下午：明治堂</h4>
+                            <p class="text-xs text-green-700 mt-2">百年麵包店，採買點心</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-indigo-600 text-white shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-lg"><i class="fa-solid fa-bus mr-2"></i>高速巴士預約</span>
+                            <span class="bg-indigo-500 px-2 py-1 rounded text-xs">需一個月前預約</span>
+                        </div>
+                        <p class="text-sm opacity-90 leading-relaxed">
+                            17:05 王子站上車 ➔ 21:23 抵達會津若松<br>
+                            住宿：mooi宮町 (Aizu Wakamatsu)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-3" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">只見線 ➔ 喜多方</h2>
+                    <div class="space-y-4">
+                        <div class="p-5 bg-slate-50 rounded-2xl border-l-4 border-slate-400">
+                            <h4 class="font-bold">只見線第一鐵橋攝影</h4>
+                            <p class="text-sm text-slate-600">搭乘接駁巴士或火車前往，拍攝絕美雪中鐵道</p>
+                        </div>
+                        <div class="p-5 bg-red-50 rounded-2xl border-l-4 border-red-500">
+                            <h4 class="font-bold text-red-900">喜多方拉麵巡禮</h4>
+                            <p class="text-sm text-red-700">名店：食堂なまえ / 坂內食堂</p>
+                        </div>
+                        <div class="p-5 bg-amber-50 rounded-2xl border-l-4 border-amber-500">
+                            <h4 class="font-bold text-amber-900">七日町散策 & 末廣酒造</h4>
+                            <p class="text-sm text-amber-700">復古街道慢步，品嘗頂級會津清酒</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-4" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">大內宿之日</h2>
+                    <div class="grid gap-6">
+                        <div class="relative overflow-hidden rounded-2xl bg-slate-100 aspect-video flex items-center justify-center">
+                            <i class="fa-solid fa-camera text-slate-300 text-5xl"></i>
+                            <span class="absolute bottom-4 left-4 text-xs font-bold bg-white/80 px-2 py-1 rounded">絕景預訂：大內宿鳥瞰</span>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                            <h4 class="font-black text-blue-900 mb-3 underline decoration-blue-300">本日必吃 & 必訪</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-blue-800"><i class="fa-solid fa-check-circle mr-2"></i>三澤屋：大蔥蕎麥麵</li>
+                                <li class="flex items-center text-blue-800"><i class="fa-solid fa-check-circle mr-2"></i>伊佐須美神社：參拜求好運</li>
+                                <li class="flex items-center text-blue-800"><i class="fa-solid fa-check-circle mr-2"></i>北會津草莓園：30分鐘吃到飽</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-5" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-4">星野度假體驗</h2>
+                    <p class="text-slate-500 mb-6 font-medium">星野集團 磐梯山溫泉飯店</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 border-2 border-dashed border-slate-200 rounded-2xl">
+                            <h5 class="font-bold mb-2">上午：接駁車</h5>
+                            <p class="text-sm text-slate-500">由會津若松站搭乘免費接駁巴士(需預約)</p>
+                        </div>
+                        <div class="p-5 bg-slate-900 text-white rounded-2xl">
+                            <h5 class="font-bold mb-2 text-blue-400">飯店活動</h5>
+                            <p class="text-sm opacity-80 leading-relaxed">
+                                • 享受雪中露天溫泉<br>
+                                • 下午茶：赤牛繪畫體驗<br>
+                                • 晚餐：飯店自助大餐
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-6" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-6">郡山購物行</h2>
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-xl bg-slate-50 flex justify-between items-center">
+                            <span class="font-bold">JR 磐梯町 ➔ 郡山站</span>
+                            <span class="text-slate-400 font-mono text-sm">約 1hr</span>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-pink-50 border border-pink-100">
+                            <h4 class="font-bold text-pink-900">郡山甜點三劍客</h4>
+                            <p class="text-sm text-pink-700 mt-1">柏屋 (薄皮饅頭) / 三萬石 (Mamaador) / 向山製作所 (焦糖)</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200">
+                            <p class="font-bold"><i class="fa-solid fa-hotel mr-2"></i>住宿：東橫INN 郡山</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-7" class="tab-content space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                    <h2 class="text-3xl font-black mb-2">仙台最後衝刺</h2>
+                    <p class="text-slate-500 mb-8">三井 Outlet 購物 ➔ 回家</p>
+                    <div class="grid gap-4">
+                        <div class="p-5 bg-white border-2 border-blue-600 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <h4 class="font-black text-blue-600">三井 Outlet 仙台港</h4>
+                                <p class="text-xs text-slate-500 mt-1">出示虎航登機證領取優惠券！</p>
+                            </div>
+                            <i class="fa-solid fa-bag-shopping text-blue-100 text-3xl"></i>
+                        </div>
+                        <div class="p-5 bg-slate-50 rounded-2xl">
+                            <p class="text-sm font-bold">午餐推薦：牛舌定食 (利久或善治郎)</p>
+                        </div>
+                        <div class="p-5 bg-slate-800 text-white rounded-2xl flex items-center space-x-4">
+                            <div class="bg-red-500 px-3 py-1 rounded text-xs font-bold uppercase">Return</div>
+                            <p class="text-sm">前往仙台機場 ➔ 賦歸</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-4 py-10 text-center text-slate-400 text-sm">
+        <p>© 2026 Lien Chao-Heng. Designed for Adventure.</p>
+    </footer>
+
+    <script>
+        function showDay(dayNumber) {
+            // 切換內容
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById('day-' + dayNumber).classList.add('active');
+
+            // 切換按鈕樣式
+            const buttons = document.querySelectorAll('.day-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-active');
+                btn.classList.add('text-slate-600', 'hover:bg-slate-50');
+            });
+            const activeBtn = document.getElementById('btn-' + dayNumber);
+            activeBtn.classList.add('btn-active');
+            activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-50');
+
+            // 手機版自動捲動到頂部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
